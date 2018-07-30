@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login into Amazon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style/indexStyle.css" />
+
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <div class="loginBox">
+        <!-- <h1>Login</h1> -->
+        <form action="home.html">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter your Email Id" id="username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter your Password" id="password">
+            <input type="button" id="loginSubmit" value="Login" onclick="return validate()" method="post">
+            <p id="error"></p>
+            <script type="text/javascript">
+                var validate = function () {
+                    var username = document.getElementById('username').value;
+                    var password = document.getElementById('password').value;
+
+                    if (username == '' || password == '') {
+                        document.getElementById('error').innerHTML = "Please enter valid credential";
+                    }
+                    else if (username == 'admin' && password == 'admin') {
+                        window.location = "home.html";
+                    } else if (username != 'admin' || password != 'admin') {
+                        document.getElementById('error').innerHTML = "Please enter valid credential";
+                    }
+
+                }
+            </script>
+        </form>
+
+    </div>
+</body>
+
+</html>
