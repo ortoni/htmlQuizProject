@@ -17,6 +17,3 @@ class Quiz {
         return this.questionIndex === this.questions.length;
     }
 }
-
-
-
