@@ -16,13 +16,24 @@
 
         <form action="home.html">
             <p>Username</p>
-            <input type="text" name="username" placeholder="Enter your Email Id" id="username">
+            <input type="text" name="username" placeholder="Enter your Email Id" id="username" onkeyup="manage(this)">
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter your Password" id="password">
-            <input type="button" id="loginSubmit" value="Login" onclick="return validate()" method="post">
+            <input type="button" id="loginSubmit" value="Login" onclick="return validate()" method="post" disabled>
             <p id="error"></p>
             <script type="text/javascript">
+                function manage(txt) {
+                    console.log(txt)
+                    var bt = document.getElementById('loginSubmit');
+                    if (txt.value != '') {
+                        bt.disabled = false;
+                    }
+                    else {
+                        bt.disabled = true;
+                    }
+                }
                 var validate = function () {
+
                     var username = document.getElementById('username').value;
                     var password = document.getElementById('password').value;
 
@@ -34,6 +45,7 @@
                     } else if (username != 'admin' || password != 'admin') {
                         document.getElementById('error').innerHTML = "Please enter valid credential";
                     }
+
 
                 }
             </script>

@@ -19,7 +19,7 @@ function populate() {
 
 function guess(id, guess) {
     var button = document.getElementById(id);
-    button.onclick = function () {
+    button.onclick = function() {
         quiz.guess(guess);
         populate();
     }
@@ -39,8 +39,8 @@ function showScores() {
 };
 // create questions
 var questions = [
-    new Question("Question 1", ["Option 1", "Option 2", "Option 3", "Option 4"], "Option 1"),
-    new Question("Question 2", ["Option 1", "Option 2", "Option 3", "Option 4"], "Option 1"),
+    new Question("Question 1", ["Option 1", "Option 2", "Option 3"], "Option 1"),
+    new Question("Question 2", ["Option 1", "Option 2", "Option 3"], "Option 1"),
 
 ];
 // create quiz
